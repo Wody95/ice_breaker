@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-
+from langchain_openai import ChatOpenAI
 
 if __name__ == "__main__":
 

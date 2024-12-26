@@ -13,6 +13,7 @@ if __name__ == "__main__":
     given the Linkedin information {information} about a person I want you to create:
     1. A short summary
     2. two interesting facts about them
+    3. always answer language in korean
     """
 
     summary_prompt_template = PromptTemplate(
@@ -23,7 +24,8 @@ if __name__ == "__main__":
 
     chain = summary_prompt_template | llm
     linkedin_data = scrape_linkedin_profile(
-        linkedin_profile_url="https://www.linkedin.com/in/eden-marco/"
+        linkedin_profile_url="https://www.linkedin.com/in/eden-marco/",
+        mock=True,
     )
     res = chain.invoke(input={"information": linkedin_data})
 

@@ -11,14 +11,13 @@ from langchain.agents import (
 from langchain import hub
 from tools.tools import get_profile_url_tavily
 
-
 def lookup(name: str) -> str:
     llm = ChatOpenAI(
         temperature=0,
         model_name="gpt-4o-mini",
     )
     template = """given the full name {name_of_person} I want you to get it me a link to their Linkedin profile page.
-                              Your answer should contain only a URL"""
+                              Your answer should contain only a URL and always answer in korean language"""
 
     prompt_template = PromptTemplate(
         template=template, input_variables=["name_of_person"]

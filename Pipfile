@@ -9,6 +9,7 @@ langchain = "*"
 langchain-openai = "*"
 tavily-python = "*"
 proxies = "*"
+langchain-community = "*"
 
 [dev-packages]
 
